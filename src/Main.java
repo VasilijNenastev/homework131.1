@@ -1,41 +1,44 @@
 public class Main {
-    public static String calculationLeapYear (int year) {
-        if (year < 1854) {
-            return " год не может быть меньше 1854";
-        }
-        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
-            return year + " - високосный год";
+    public static String calculationLeapYear (int year1) {
+        String result;
+        if (year1 < 1854) {
+            result = " год не может быть меньше 1854";
+        } else if (year1 % 4 == 0 && year1 % 100 != 0 || year1 % 400 == 0) {
+            result = year1 + " - високосный год";
         } else {
-            return year + " - не високосный год";
+            result = year1 + " - не високосный год";
         }
+        return result;
     }
 
     public static String clientDeviceYear(int clientOS, int year) {
-        int iOS1 = 0;
-        int android1 = 1;
-        if (clientOS == iOS1 && year >= 2015) {
-            return "Установите версию приложения для iOS по ссылке";
-        } else if (clientOS == iOS1 && year < 2015) {
-            return "Установите облегченную версию приложения для iOS по ссылке";
-        } else if (clientOS == android1 && year >= 2015) {
-            return "Установите версию приложения для Android по ссылке";
+        String result;
+        int iOS = 0;
+        int android = 1;
+        if (clientOS == iOS && year >= 2015) {
+            result = "Установите версию приложения для iOS по ссылке";
+        } else if (clientOS == iOS && year < 2015) {
+            result = "Установите облегченную версию приложения для iOS по ссылке";
+        } else if (clientOS == android && year >= 2015) {
+            result = "Установите версию приложения для Android по ссылке";
         } else {
-            return "Установите облегченную версию приложения для Android по ссылке";
+            result = "Установите облегченную версию приложения для Android по ссылке";
         }
+        return result;
     }
 
     public static String deliveryDistance(int DistanceKm) {
+        String result;
         if (DistanceKm < 20) {
-            return "Потребуется 1 день на доставку";
-        }
-        if (DistanceKm >= 20 && DistanceKm < 60) {
-            return "Потребуется 2 дня на доставку";
-        }
-        if (DistanceKm >= 60 && DistanceKm < 100) {
-            return "Потребуется 3 дня на доставку";
+            result = "Потребуется 1 день на доставку";
+        } else if (DistanceKm >= 20 && DistanceKm < 60) {
+            result = "Потребуется 2 дня на доставку";
+        } else if (DistanceKm >= 60 && DistanceKm < 100) {
+            result = "Потребуется 3 дня на доставку";
         } else {
-            return "Доставка не производится";
+            result = "Доставка не производится";
         }
+        return result;
     }
 
 
